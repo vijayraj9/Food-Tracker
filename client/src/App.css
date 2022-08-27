@@ -14,19 +14,23 @@ body {
 }
 
 .container {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  background-color: white;
+  width: 500px;
+  height: 800px;
 }
 
 .product-list {
-  width: 350px;
   padding: 7px;
-  background-color: #fff;
   border-radius: 4px;
-  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+}
+.delete-item {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .product-list li {
+  margin: 10px;
   list-style: none;
   margin-bottom: 10px;
   cursor: pointer;
@@ -38,8 +42,8 @@ body {
 }
 
 .product-image {
-  width: 120px;
-  height: 120px;
+  width: 70px;
+  height: 50px;
   padding-right: 20px;
 }
 
@@ -51,6 +55,11 @@ body {
 
 .product-imformation h4 {
   font-size: 20px;
+}
+
+.header {
+  text-align: center;
+  padding-top: 30px;
 }
 
 .product-imformation .specification {
@@ -88,4 +97,87 @@ body {
   display: flex;
   margin-left: 10px;
   margin-right: 10px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+div {
+  margin: 8px;
+}
+input[type="file"],
+input[type="file"] + input {
+  display: inline-block;
+  background-color: #eee;
+  border: 1px solid gray;
+  font-size: 15px;
+  padding: 4px;
+}
+input[type="file"] + input {
+  padding: 13px;
+  background-color: #00b7cd;
+}
+::-webkit-file-upload-button {
+  -webkit-appearance: none;
+  background-color: #00b7cd;
+  border: 1px solid gray;
+  font-size: 15px;
+  padding: 8px;
+}
+::-ms-browse {
+  background-color: #00b7cd;
+  border: 1px solid gray;
+  font-size: 15px;
+  padding: 8px;
+}
+input[type="file"]::-ms-value {
+  border: none;
+}
+.box-view {
+  display: flex;
+  background-color: white;
+  padding: 350px 40px;
+}
+
+.lined {
+  position: absolute;
+  border: solid 1px #f5eded;
+  bottom: 130px;
+  width: 480px;
+}
+.circle-parent {
+  display: flex;
+  position: absolute;
+  bottom: 76px;
+}
+.circle {
+  border-radius: 50px;
+  width: 35px;
+  height: 35px;
+  margin-left: 67px;
+  background: gainsboro;
+}
+
+.alert-container {
+  position: absolute;
+  top: 35px;
+  right: 280px;
+}
+.alert {
+  padding: 20px;
+  background-color: #f3f3f3; /* Red */
+  color: black;
+  margin-bottom: 15px;
+}
+
+.loading {
+  position: absolute;
+  top: 45%;
+  left: 475px;
+  font-size: 25px;
+}
+
+.innerText {
+  font-size: 10px;
 }
