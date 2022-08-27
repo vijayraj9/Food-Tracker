@@ -1,27 +1,47 @@
 const express = require("express");
-const webpush = require("web-push");
-require("dotenv").config();
 const bodyParser = require("body-parser");
-const path = require("path");
 
 const app = express();
-app.use(express.static(path.join(__dirname, "build")));
-
-app.use(bodyParser.json());
-webpush.setVapidDetails(
-  "mailto:test@test.com",
-  process.env.PUBLIC_KEY,
-  process.env.PRIVATE_KEY
-);
-
-app.post("", (req, res) => {
-  const subs = req.body;
-  res.status(201).json({});
-
-  webpush.sendNotification(subs, JSON.stringify({ title: "Test" }));
+app.use(function (req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader("Access-Control-Allow-Credentials", true);
+  next();
 });
-app.get("/api", (req, res) => {
-  res.json({ user: ["1", "2", "3"] });
+const list = [
+  {
+    name: "Banana",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/8/8a/Banana-Single.jpg",
+    expiryDate: "3 days left",
+    additionalInfo: "Description",
+  },
+  {
+    name: "Banana",
+    image: "https://i.imgur.com/ILEU18M.jpg",
+    expiryDate: "10:30:29",
+    additionalInfo: "Description",
+  },
+  {
+    name: "Microsoft Surface Pro",
+    image: "https://i.imgur.com/ILEU18M.jpg",
+    ram: "16GB",
+    ssd: "512GB",
+    price: "499",
+  },
+  {
+    name: "Banana",
+    image: "https://i.imgur.com/ILEU18M.jpg",
+    expiryDate: "10:30:29",
+    additionalInfo: "Description",
+  },
+];
+app.get("/food", (req, res) => {
+  res.json(list);
 });
 
+app.post("/food", (req, res) => {
+  list.push(req.body);
+});
 app.listen(5001, () => console.log("Server started"));
