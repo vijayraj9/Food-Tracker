@@ -1,1 +1,1 @@
-# expiry-notif
+# Hackathon Project - expiry-notif (finalists)
