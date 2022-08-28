@@ -149,7 +149,7 @@ input[type="file"]::-ms-value {
 .circle-parent {
   display: flex;
   position: absolute;
-  bottom: 76px;
+  bottom: 75px;
 }
 .circle {
   border-radius: 50px;
@@ -162,7 +162,7 @@ input[type="file"]::-ms-value {
 .alert-container {
   position: absolute;
   top: 35px;
-  right: 280px;
+  right: 570px;
 }
 .alert {
   padding: 20px;
@@ -174,10 +174,18 @@ input[type="file"]::-ms-value {
 .loading {
   position: absolute;
   top: 45%;
-  left: 475px;
+  right: 50%;
   font-size: 25px;
 }
 
 .innerText {
   font-size: 10px;
+}
+
+.go-back {
+  color: green;
+  float: left;
+  padding-left: 10px;
+  padding: 10px;
+  border: 1px solid gainsboro;
 }
